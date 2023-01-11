@@ -1,0 +1,13 @@
+pyproject.toml
+setup.cfg
+setup.py
+src/BasicDataStructures/BasicDataStructures.py
+src/BasicDataStructures/__init__.py
+src/DataStructures.egg-info/PKG-INFO
+src/DataStructures.egg-info/SOURCES.txt
+src/DataStructures.egg-info/dependency_links.txt
+src/DataStructures.egg-info/not-zip-safe
+src/DataStructures.egg-info/requires.txt
+src/DataStructures.egg-info/top_level.txt
+src/SortingAlgorithms/BasicSortingAlgorithms.py
+src/SortingAlgorithms/__init__.py
