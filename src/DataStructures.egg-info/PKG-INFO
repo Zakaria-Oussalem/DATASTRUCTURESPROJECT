@@ -3,16 +3,7 @@ Name: DataStructures
 Version: 0.0.0
 Summary: a personal demo project using data structures and algorithms
 Author: Zakaria Oussalem
-Platform: unix
-Platform: linux
-Platform: osx
-Platform: cygwin
 Platform: win32
-Classifier: programlming Language :: Python :: 3
-Classifier: programlming Language :: Python :: 3 :: Only
-Classifier: programlming Language :: Python :: 3.6
-Classifier: programlming Language :: Python :: 3.7
-Classifier: programlming Language :: Python :: 3.8
-Classifier: programlming Language :: Python :: 3.9
-Requires-Python: >=3.6
+Classifier: programming Language :: Python :: 3.9
+Requires-Python: >=3
 Provides-Extra: testing
