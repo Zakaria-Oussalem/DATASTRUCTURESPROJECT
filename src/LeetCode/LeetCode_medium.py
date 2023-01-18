@@ -85,4 +85,18 @@ def addTwoNumbers(l1: Node, l2: Node) -> Node:
 
 
 def Anagram(l: list[str]) -> list[list[str]]:
-    pass
+    # my first idea is that we will traverse the list and when we see something that matches we add it
+    # to the dictionnary
+
+    ann = dict()
+    for e in l:
+        temp = "".join(sorted(e))
+        if temp in ann:
+            ann[temp].append(e)
+            continue
+        ann[temp] = [e]
+
+    return list(ann.values())
+
+
+print(Anagram(["eat", "tea", "tan", "ate", "nat", "bat"]))

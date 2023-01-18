@@ -111,7 +111,7 @@ def quickSortH(myList: list[float]) -> list[float]:
 
     myList[end], myList[0] = pivot, myList[end]
     return (
-        quickSortH(myList[:end]) + myList[end : end + 1] + quickSortH(myList[end + 1 :])
+        quickSortH(myList[:end]) + myList[end: end + 1] + quickSortH(myList[end + 1:])
     )
 
 
@@ -136,8 +136,8 @@ def quickSortL(myList: list[float]) -> list[float]:
 
     return (
         quickSortL(myList[:p_index])
-        + myList[p_index : p_index + 1]
-        + quickSortL(myList[p_index + 1 :])
+        + myList[p_index: p_index + 1]
+        + quickSortL(myList[p_index + 1:])
     )
 
 
@@ -179,7 +179,7 @@ def runningMedian(myList: list[float]):
         if len(myList) % 2 == 1:
             return myList[len(myList) // 2]
         else:
-            return sum(myList[len(myList) // 2 - 1 : len(myList) // 2 + 1]) / 2
+            return sum(myList[len(myList) // 2 - 1: len(myList) // 2 + 1]) / 2
 
     for pointer in range(0, len(myList)):
         pointBack = pointer

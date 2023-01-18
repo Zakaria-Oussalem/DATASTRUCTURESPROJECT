@@ -1,4 +1,4 @@
-from LeetCode.LeetCode_medium import addTwoNumbers, Node
+from LeetCode.LeetCode_medium import addTwoNumbers, Node, Anagram
 import pytest
 
 
@@ -23,3 +23,11 @@ def test_add_binary(input_1, input_2, expected):
     print("")
     print(l2.print())
     assert addTwoNumbers(l1, l2) == exp
+
+
+def test_annargram():
+    b = [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
+    temp = Anagram(["eat", "tea", "tan", "ate", "nat", "bat"])
+    assert len(b) == len(temp)
+    for e in temp:
+        assert e in b
