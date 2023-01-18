@@ -82,3 +82,7 @@ def addTwoNumbers(l1: Node, l2: Node) -> Node:
 
 #####################
 #####################
+
+
+def Anagram(l: list[str]) -> list[list[str]]:
+    pass

@@ -229,7 +229,7 @@ class LinkedList:
         Args:
             dt_remove (object): Value to remove
         """
-        if self.head == None:
+        if self.head is None:
             return
         # basic case
         if self.head.data == dt_remove:

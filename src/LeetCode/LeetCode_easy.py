@@ -2,7 +2,7 @@
 ######################################
 
 # My solution:
-def addBinary(self, a: str, b: str) -> str:
+def addBinary(a: str, b: str) -> str:
     # Basic case
     if a == "0" or b == "0":
         if a == "0":
@@ -40,7 +40,7 @@ def addBinary(self, a: str, b: str) -> str:
 
 
 # Best Solution:
-def addBinary(a: str, b: str) -> str:
+def addBinary_b(a: str, b: str) -> str:
     """Function that takes two numbers represented with binary strings
     and returns the sum as a binary string.
 
