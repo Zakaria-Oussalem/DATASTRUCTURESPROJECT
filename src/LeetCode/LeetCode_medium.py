@@ -97,6 +97,3 @@ def Anagram(l: list[str]) -> list[list[str]]:
         ann[temp] = [e]
 
     return list(ann.values())
-
-
-print(Anagram(["eat", "tea", "tan", "ate", "nat", "bat"]))

@@ -30,4 +30,6 @@ def test_annargram():
     temp = Anagram(["eat", "tea", "tan", "ate", "nat", "bat"])
     assert len(b) == len(temp)
     for e in temp:
-        assert e in b
+        assert sorted(e) in b
+
+        
