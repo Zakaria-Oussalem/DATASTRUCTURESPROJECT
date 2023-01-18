@@ -1,4 +1,4 @@
-from LeetCode.LeetCode_easy import addBinary
+from LeetCode.LeetCode_easy import addBinary, isPalindrome
 import pytest
 
 
@@ -16,3 +16,20 @@ import pytest
 )
 def test_add_binary(input_1, input_2, expected):
     assert addBinary(input_1, input_2) == expected
+
+
+@pytest.mark.parametrize(
+    "input, expected",
+    [
+        ("0", True),
+        ("  ", True),
+        (" 0 ", True),
+        (" ù$* ", True),
+        (" bù$*a ", False),
+        (" aerea$* ", True),
+        ("race a car", False),
+        ("A man, a plan, a canal: Panama", True),
+    ],
+)
+def test_isPalindrome(input, expected):
+    assert isPalindrome(input) is expected

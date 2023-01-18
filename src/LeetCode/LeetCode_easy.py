@@ -67,3 +67,37 @@ def addBinary(a: str, b: str) -> str:
         carry //= 2
 
     return result[::-1]
+
+
+#####################
+####################
+def isPalindrome(s: str) -> bool:
+    """Function that checks if a string is a palindrome or not
+    it only acceptes alphanumeric characters. This solution is an O(n)
+
+    Args:
+        s (str): string to check wether it is a palindrole or not
+
+    Returns:
+        bool: Whether the string was a palindrome or not
+    """
+    if len(s.strip()) < 2:
+        return True
+
+    accepted = "azertyuiopqsdfghjklmwxcvbn1234567890"
+    lifo = []
+    s = list(s.lower())
+    for i, e in enumerate(s):
+        if e in accepted:
+            lifo.append(e)
+            continue
+        else:
+            s[i] = ""
+    s = "".join(s)
+
+    for i, e in enumerate(s):
+        if e == lifo[-1]:
+            lifo.pop()
+        else:
+            return False
+    return True
