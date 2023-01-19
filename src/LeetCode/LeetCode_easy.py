@@ -101,3 +101,23 @@ def isPalindrome(s: str) -> bool:
         else:
             return False
     return True
+
+
+######################
+# Remove duplicates #
+def removeDuplicates(nums: list[int]):
+    for i in range(len(nums)):
+        if nums[i] == "_":
+            return i
+        carry = 0
+        for j in range(i + 1, len(nums)):
+            j += carry
+            print(nums)
+            if nums[j] == "_":
+                break
+            if nums[i] == nums[j]:
+                nums.pop(j)
+                nums.append("_")
+                carry = -1
+
+    return len(nums)

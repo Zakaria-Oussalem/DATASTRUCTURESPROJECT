@@ -1,4 +1,4 @@
-from LeetCode.LeetCode_easy import addBinary, isPalindrome
+from LeetCode.LeetCode_easy import addBinary, isPalindrome, removeDuplicates
 import pytest
 
 
@@ -33,3 +33,8 @@ def test_add_binary(input_1, input_2, expected):
 )
 def test_isPalindrome(input, expected):
     assert isPalindrome(input) is expected
+
+
+def test_removeDuplicates():
+    temp = removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
+    assert temp == 5
