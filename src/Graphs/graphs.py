@@ -22,6 +22,10 @@ class Vertex:
     def getWeight(self, nbr):
         return self.connectedTo.get(nbr)
 
+    def remove_neighbor(self, nbr):
+        if nbr in self.connectedTo:
+            del self.connectedTo[nbr]
+
 
 class Graph:
     def __init__(self):
@@ -64,3 +68,13 @@ class Graph:
                         self.Hash[v2]
                     )
         return adj_matrix
+
+    def removeVertex(self, key):
+
+        # In the graph:
+        del self.vertList[key]
+        self.numVertices -= 1
+
+        # Connections with other vertices:
+        for v in self.vertList:
+            self.vertList[v].remove_neighbor(key)
