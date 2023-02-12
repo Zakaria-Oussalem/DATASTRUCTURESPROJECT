@@ -1,5 +1,6 @@
 from Graphs.graphs import Vertex, Graph
 import pytest
+import numpy as np
 
 
 # See if vertex functionality works
@@ -24,6 +25,16 @@ def build_graph():
     return g
 
 
+@pytest.fixture
+def build_simple_graph():
+    g = Graph()
+    g.addEdge("Paris", "Agadir", 3.5)
+    g.addEdge("Lille", "Paris", 1)
+    g.addEdge("Lille", "Agadir", 4)
+
+    return g
+
+
 def test_graph(build_graph):
 
     assert list(build_graph.getVertices()) == [
@@ -37,5 +48,15 @@ def test_graph(build_graph):
 
 
 def test_graph_Count(build_graph):
-
     assert build_graph.getCount() == 6
+
+
+def test_Hashing(build_graph):
+    assert build_graph.Hash[2] == "Lille"
+
+
+def test_AdjMatrix(build_simple_graph):
+    assert (
+        build_simple_graph.getAdjMatrix()
+        == np.array([[0, 3.5, 1], [3.5, 0, 4], [1, 4, 0]])
+    ).all

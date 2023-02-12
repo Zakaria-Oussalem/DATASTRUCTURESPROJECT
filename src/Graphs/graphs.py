@@ -27,10 +27,12 @@ class Graph:
     def __init__(self):
         self.vertList = {}
         self.numVertices = 0
+        self.Hash = {}
 
     def add_vertex(self, key) -> None:
         newVertex = Vertex(key)
         self.vertList[newVertex.id] = newVertex
+        self.Hash[self.numVertices] = newVertex.id
         self.numVertices += 1
 
     def getVertex(self, key):
@@ -54,9 +56,11 @@ class Graph:
         return self.numVertices
 
     def getAdjMatrix(self):
-        adj_matrix = np.zeros(self.getCount(), self.getCount())
+        adj_matrix = np.zeros((self.getCount(), self.getCount()))
         for v1 in range(self.getCount()):
             for v2 in range(self.getCount()):
-                if self.getVertex(v1).getWeight(v2):
-                    adj_matrix[v1, v2] = self.getVertex(v1).getWeight(v2)
+                if self.getVertex(self.Hash[v1]).getWeight(self.Hash[v2]):
+                    adj_matrix[v1, v2] = self.getVertex(self.Hash[v1]).getWeight(
+                        self.Hash[v2]
+                    )
         return adj_matrix
