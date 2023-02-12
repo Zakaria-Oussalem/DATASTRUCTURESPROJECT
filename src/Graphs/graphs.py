@@ -1,5 +1,6 @@
 # Implementing the graph class
-import numpy as  np
+import numpy as np
+
 
 class Vertex:
     def __init__(self, key):
@@ -52,8 +53,8 @@ class Graph:
     def getCount(self):
         return self.numVertices
 
-    def getAdjencencyMatrix(self):
-        adj_matrix = np.zeros(self.getCount(),self.getCount())
+    def getAdjMatrix(self):
+        adj_matrix = np.zeros(self.getCount(), self.getCount())
         for v1 in range(self.getCount()):
             for v2 in range(self.getCount()):
                 if self.getVertex(v1).getWeight(v2):

@@ -1,0 +1,41 @@
+from Graphs.graphs import Vertex, Graph
+import pytest
+
+
+# See if vertex functionality works
+def test_vertex():
+    v1 = Vertex(0)
+    v1.add_neighbor(1)
+    v1.add_neighbor(2)
+    v1.add_neighbor(3)
+    assert list(v1.get_nodes()) == [1, 2, 3]
+
+
+@pytest.fixture
+def build_graph():
+    g = Graph()
+    g.addEdge("Paris", "Agadir", 3.5)
+    g.addEdge("Lille", "Paris", 1)
+    g.addEdge("Lille", "Brussels", 2.5)
+    g.addEdge("Lille", "Krakow", 2)
+    g.addEdge("Lille", "Agadir", 4)
+    g.addEdge("Krakow", "Canaria", 5.5)
+    g.addEdge("Canaria", "Agadir", 0.5)
+    return g
+
+
+def test_graph(build_graph):
+
+    assert list(build_graph.getVertices()) == [
+        "Paris",
+        "Agadir",
+        "Lille",
+        "Brussels",
+        "Krakow",
+        "Canaria",
+    ]
+
+
+def test_graph_Count(build_graph):
+
+    assert build_graph.getCount() == 6
